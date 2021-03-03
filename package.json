@@ -1,0 +1,20 @@
+{
+  "name": "web-guidelines",
+  "version": "1.0.0",
+  "description": "",
+  "main": "rulesManage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://wangjianqing@gitlab.ktjr.com/wangjianqing/web-guidelines.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "2.2.1"
+  }
+}

@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = function () {
+      let obg = {};
+      document.querySelectorAll("table tbody tr").forEach(dom => {
+
+        const innerHTML0 = dom.children[0].innerHTML;
+        const innerHTML1 = dom.children[1].innerHTML;
+        const innerHTML2 = dom.children[2] && dom.children[2].innerHTML;
+
+
+        const aa = innerHTML0.match(/href="([\s\S]*?)"\s/)[1]; // href
+        const bb = innerHTML0.match(/<a.*>(.*)<\/a>/)[1]; //key
+        const cc = innerHTML1;
+        obg[`${bb}`] = {};
+        obg[`${bb}`]["href"] = "https://eslint.vuejs.org" + aa;
+        obg[`${bb}`]["desc"] = cc;
+      });
+
+      document.write(JSON.stringify(obg));
+    }
+  </script>
+</head>
+
+<body>
+  <div class="theme-default-content content__default">
+    <h1 id="available-rules"><a href="#available-rules" class="header-anchor">#</a> Available rules</h1>
+    <div class="custom-block tip">
+      <p class="custom-block-title">Legend</p>
+      <p>🔧 Indicates that the rule is fixable, and using <code>--fix</code> option on the <a
+          href="https://eslint.org/docs/user-guide/command-line-interface#fixing-problems" target="_blank"
+          rel="noopener noreferrer">command line<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+              focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound">
+              <path fill="currentColor"
+                d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+              </path>
+              <polygon fill="currentColor"
+                points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+              </polygon>
+            </svg> <span class="sr-only">(opens new window)</span></span></a> can automatically fix some of the reported
+        problems.</p>
+    </div>
+    <h2 id="base-rules-enabling-correct-eslint-parsing"><a href="#base-rules-enabling-correct-eslint-parsing"
+        class="header-anchor">#</a> Base Rules (Enabling Correct ESLint Parsing)</h2>
+    <p>Enforce all the rules in this category, as well as all higher priority rules, with:</p>
+    <div class="language-json extra-class">
+      <pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">"extends"</span><span class="token operator">:</span> <span class="token string">"plugin:vue/base"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: left;">Rule ID</th>
+          <th style="text-align: left;">Description</th>
+          <th style="text-align: left;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/comment-directive.html" class="">vue/comment-directive</a></td>
+          <td style="text-align: left;">support comment-directives in <code>&lt;template&gt;</code></td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/experimental-script-setup-vars.html"
+              class="">vue/experimental-script-setup-vars</a></td>
+          <td style="text-align: left;">prevent variables defined in <code>&lt;script setup&gt;</code> to be marked as
+            undefined</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/jsx-uses-vars.html" class="">vue/jsx-uses-vars</a></td>
+          <td style="text-align: left;">prevent variables used in JSX to be marked as unused</td>
+          <td style="text-align: left;"></td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="priority-a-essential-error-prevention-for-vue-js-3-x"><a
+        href="#priority-a-essential-error-prevention-for-vue-js-3-x" class="header-anchor">#</a> Priority A: Essential
+      (Error Prevention) <span data-v-15b7b770="" class="badge tip" style="vertical-align: middle;">for Vue.js
+        3.x</span>
+    </h2>
+    <p>Enforce all the rules in this category, as well as all higher priority rules, with:</p>
+    <div class="language-json extra-class">
+      <pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">"extends"</span><span class="token operator">:</span> <span class="token string">"plugin:vue/vue3-essential"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: left;">Rule ID</th>
+          <th style="text-align: left;">Description</th>
+          <th style="text-align: left;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-arrow-functions-in-watch.html"
+              class="">vue/no-arrow-functions-in-watch</a></td>
+          <td style="text-align: left;">disallow using arrow functions to define watcher</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-async-in-computed-properties.html"
+              class="">vue/no-async-in-computed-properties</a></td>
+          <td style="text-align: left;">disallow asynchronous actions in computed properties</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-deprecated-data-object-declaration.html"
+              class="">vue/no-deprecated-data-object-declaration</a></td>
+          <td style="text-align: left;">disallow using deprecated object declaration on data (in Vue.js 3.0.0+)</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-deprecated-destroyed-lifecycle.html"
+              class="">vue/no-deprecated-destroyed-lifecycle</a></td>
+          <td style="text-align: left;">disallow using deprecated <code>destroyed</code> and <code>beforeDestroy</code>
+            lifecycle hooks (in Vue.js 3.0.0+)</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-deprecated-dollar-listeners-api.html"
+              class="">vue/no-deprecated-dollar-listeners-api</a></td>
+          <td style="text-align: left;">disallow using deprecated <code>$listeners</code> (in Vue.js 3.0.0+)</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-deprecated-dollar-scopedslots-api.html"
+              class="">vue/no-deprecated-dollar-scopedslots-api</a></td>
+          <td style="text-align: left;">disallow using deprecated <code>$scopedSlots</code> (in Vue.js 3.0.0+)</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-deprecated-events-api.html"
+              class="">vue/no-deprecated-events-api</a></td>
+          <td style="text-align: left;">disallow using deprecated events api (in Vue.js 3.0.0+)</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-deprecated-filter.html" class="">vue/no-deprecated-filter</a>
+          </td>
+          <td style="text-align: left;">disallow using deprecated filters syntax (in Vue.js 3.0.0+)</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-deprecated-functional-template.html"
+              class="">vue/no-deprecated-functional-template</a></td>
+          <td style="text-align: left;">disallow using deprecated the <code>functional</code> template (in Vue.js
+            3.0.0+)
+          </td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-deprecated-html-element-is.html"
+              class="">vue/no-deprecated-html-element-is</a></td>
+          <td style="text-align: left;">disallow using deprecated the <code>is</code> attribute on HTML elements (in
+            Vue.js 3.0.0+)</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-deprecated-inline-template.html"
+              class="">vue/no-deprecated-inline-template</a></td>
+          <td style="text-align: left;">disallow using deprecated <code>inline-template</code> attribute (in Vue.js
+            3.0.0+)</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-deprecated-props-default-this.html"
+              class="">vue/no-deprecated-props-default-this</a></td>
+          <td style="text-align: left;">disallow props default function <code>this</code> access</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-deprecated-scope-attribute.html"
+              class="">vue/no-deprecated-scope-attribute</a></td>
+          <td style="text-align: left;">disallow deprecated <code>scope</code> attribute (in Vue.js 2.5.0+)</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-deprecated-slot-attribute.html"
+              class="">vue/no-deprecated-slot-attribute</a></td>
+          <td style="text-align: left;">disallow deprecated <code>slot</code> attribute (in Vue.js 2.6.0+)</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-deprecated-slot-scope-attribute.html"
+              class="">vue/no-deprecated-slot-scope-attribute</a></td>
+          <td style="text-align: left;">disallow deprecated <code>slot-scope</code> attribute (in Vue.js 2.6.0+)</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-deprecated-v-bind-sync.html"
+              class="">vue/no-deprecated-v-bind-sync</a></td>
+          <td style="text-align: left;">disallow use of deprecated <code>.sync</code> modifier on <code>v-bind</code>
+            directive (in Vue.js 3.0.0+)</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-deprecated-v-on-native-modifier.html"
+              class="">vue/no-deprecated-v-on-native-modifier</a></td>
+          <td style="text-align: left;">disallow using deprecated <code>.native</code> modifiers (in Vue.js 3.0.0+)</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-deprecated-v-on-number-modifiers.html"
+              class="">vue/no-deprecated-v-on-number-modifiers</a></td>
+          <td style="text-align: left;">disallow using deprecated number (keycode) modifiers (in Vue.js 3.0.0+)</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-deprecated-vue-config-keycodes.html"
+              class="">vue/no-deprecated-vue-config-keycodes</a></td>
+          <td style="text-align: left;">disallow using deprecated <code>Vue.config.keyCodes</code> (in Vue.js 3.0.0+)
+          </td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-dupe-keys.html" class="">vue/no-dupe-keys</a></td>
+          <td style="text-align: left;">disallow duplication of field names</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-dupe-v-else-if.html" class="">vue/no-dupe-v-else-if</a></td>
+          <td style="text-align: left;">disallow duplicate conditions in <code>v-if</code> / <code>v-else-if</code>
+            chains
+          </td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-duplicate-attributes.html"
+              class="">vue/no-duplicate-attributes</a></td>
+          <td style="text-align: left;">disallow duplication of attributes</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-lifecycle-after-await.html"
+              class="">vue/no-lifecycle-after-await</a></td>
+          <td style="text-align: left;">disallow asynchronously registered lifecycle hooks</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-mutating-props.html" class="">vue/no-mutating-props</a></td>
+          <td style="text-align: left;">disallow mutation of component props</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-parsing-error.html" class="">vue/no-parsing-error</a></td>
+          <td style="text-align: left;">disallow parsing errors in <code>&lt;template&gt;</code></td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-ref-as-operand.html" class="">vue/no-ref-as-operand</a></td>
+          <td style="text-align: left;">disallow use of value wrapped by <code>ref()</code> (Composition API) as an
+            operand</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-reserved-keys.html" class="">vue/no-reserved-keys</a></td>
+          <td style="text-align: left;">disallow overwriting reserved keys</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-setup-props-destructure.html"
+              class="">vue/no-setup-props-destructure</a></td>
+          <td style="text-align: left;">disallow destructuring of <code>props</code> passed to <code>setup</code></td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-shared-component-data.html"
+              class="">vue/no-shared-component-data</a></td>
+          <td style="text-align: left;">enforce component's data property to be a function</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-side-effects-in-computed-properties.html"
+              class="">vue/no-side-effects-in-computed-properties</a></td>
+          <td style="text-align: left;">disallow side effects in computed properties</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-template-key.html" class="">vue/no-template-key</a></td>
+          <td style="text-align: left;">disallow <code>key</code> attribute on <code>&lt;template&gt;</code></td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-textarea-mustache.html" class="">vue/no-textarea-mustache</a>
+          </td>
+          <td style="text-align: left;">disallow mustaches in <code>&lt;textarea&gt;</code></td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-unused-components.html" class="">vue/no-unused-components</a>
+          </td>
+          <td style="text-align: left;">disallow registering components that are not used inside templates</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-unused-vars.html" class="">vue/no-unused-vars</a></td>
+          <td style="text-align: left;">disallow unused variable definitions of v-for directives or scope attributes
+          </td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-use-v-if-with-v-for.html"
+              class="">vue/no-use-v-if-with-v-for</a></td>
+          <td style="text-align: left;">disallow use v-if on the same element as v-for</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-v-for-template-key-on-child.html"
+              class="">vue/no-v-for-template-key-on-child</a></td>
+          <td style="text-align: left;">disallow key of <code>&lt;template v-for&gt;</code> placed on child elements
+          </td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-watch-after-await.html" class="">vue/no-watch-after-await</a>
+          </td>
+          <td style="text-align: left;">disallow asynchronously registered <code>watch</code></td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/require-component-is.html" class="">vue/require-component-is</a>
+          </td>
+          <td style="text-align: left;">require <code>v-bind:is</code> of <code>&lt;component&gt;</code> elements</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/require-prop-type-constructor.html"
+              class="">vue/require-prop-type-constructor</a></td>
+          <td style="text-align: left;">require prop type to be a constructor</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/require-render-return.html"
+              class="">vue/require-render-return</a>
+          </td>
+          <td style="text-align: left;">enforce render function to always return value</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/require-slots-as-functions.html"
+              class="">vue/require-slots-as-functions</a></td>
+          <td style="text-align: left;">enforce properties of <code>$slots</code> to be used as a function</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/require-toggle-inside-transition.html"
+              class="">vue/require-toggle-inside-transition</a></td>
+          <td style="text-align: left;">require control the display of the content inside
+            <code>&lt;transition&gt;</code>
+          </td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/require-v-for-key.html" class="">vue/require-v-for-key</a></td>
+          <td style="text-align: left;">require <code>v-bind:key</code> with <code>v-for</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/require-valid-default-prop.html"
+              class="">vue/require-valid-default-prop</a></td>
+          <td style="text-align: left;">enforce props default values to be valid</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/return-in-computed-property.html"
+              class="">vue/return-in-computed-property</a></td>
+          <td style="text-align: left;">enforce that a return statement is present in computed property</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/return-in-emits-validator.html"
+              class="">vue/return-in-emits-validator</a></td>
+          <td style="text-align: left;">enforce that a return statement is present in emits validator</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/use-v-on-exact.html" class="">vue/use-v-on-exact</a></td>
+          <td style="text-align: left;">enforce usage of <code>exact</code> modifier on <code>v-on</code></td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-template-root.html" class="">vue/valid-template-root</a>
+          </td>
+          <td style="text-align: left;">enforce valid template root</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-bind.html" class="">vue/valid-v-bind</a></td>
+          <td style="text-align: left;">enforce valid <code>v-bind</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-cloak.html" class="">vue/valid-v-cloak</a></td>
+          <td style="text-align: left;">enforce valid <code>v-cloak</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-else-if.html" class="">vue/valid-v-else-if</a></td>
+          <td style="text-align: left;">enforce valid <code>v-else-if</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-else.html" class="">vue/valid-v-else</a></td>
+          <td style="text-align: left;">enforce valid <code>v-else</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-for.html" class="">vue/valid-v-for</a></td>
+          <td style="text-align: left;">enforce valid <code>v-for</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-html.html" class="">vue/valid-v-html</a></td>
+          <td style="text-align: left;">enforce valid <code>v-html</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-if.html" class="">vue/valid-v-if</a></td>
+          <td style="text-align: left;">enforce valid <code>v-if</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-is.html" class="">vue/valid-v-is</a></td>
+          <td style="text-align: left;">enforce valid <code>v-is</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-model.html" class="">vue/valid-v-model</a></td>
+          <td style="text-align: left;">enforce valid <code>v-model</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-on.html" class="">vue/valid-v-on</a></td>
+          <td style="text-align: left;">enforce valid <code>v-on</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-once.html" class="">vue/valid-v-once</a></td>
+          <td style="text-align: left;">enforce valid <code>v-once</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-pre.html" class="">vue/valid-v-pre</a></td>
+          <td style="text-align: left;">enforce valid <code>v-pre</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-show.html" class="">vue/valid-v-show</a></td>
+          <td style="text-align: left;">enforce valid <code>v-show</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-slot.html" class="">vue/valid-v-slot</a></td>
+          <td style="text-align: left;">enforce valid <code>v-slot</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-text.html" class="">vue/valid-v-text</a></td>
+          <td style="text-align: left;">enforce valid <code>v-text</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="priority-b-strongly-recommended-improving-readability-for-vue-js-3-x"><a
+        href="#priority-b-strongly-recommended-improving-readability-for-vue-js-3-x" class="header-anchor">#</a>
+      Priority
+      B: Strongly Recommended (Improving Readability) <span data-v-15b7b770="" class="badge tip"
+        style="vertical-align: middle;">for Vue.js 3.x</span></h2>
+    <p>Enforce all the rules in this category, as well as all higher priority rules, with:</p>
+    <div class="language-json extra-class">
+      <pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">"extends"</span><span class="token operator">:</span> <span class="token string">"plugin:vue/vue3-strongly-recommended"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: left;">Rule ID</th>
+          <th style="text-align: left;">Description</th>
+          <th style="text-align: left;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/attribute-hyphenation.html"
+              class="">vue/attribute-hyphenation</a>
+          </td>
+          <td style="text-align: left;">enforce attribute naming style on custom components in template</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/component-definition-name-casing.html"
+              class="">vue/component-definition-name-casing</a></td>
+          <td style="text-align: left;">enforce specific casing for component definition name</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/html-closing-bracket-newline.html"
+              class="">vue/html-closing-bracket-newline</a></td>
+          <td style="text-align: left;">require or disallow a line break before tag's closing brackets</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/html-closing-bracket-spacing.html"
+              class="">vue/html-closing-bracket-spacing</a></td>
+          <td style="text-align: left;">require or disallow a space before tag's closing brackets</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/html-end-tags.html" class="">vue/html-end-tags</a></td>
+          <td style="text-align: left;">enforce end tag style</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/html-indent.html" class="">vue/html-indent</a></td>
+          <td style="text-align: left;">enforce consistent indentation in <code>&lt;template&gt;</code></td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/html-quotes.html" class="">vue/html-quotes</a></td>
+          <td style="text-align: left;">enforce quotes style of HTML attributes</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/html-self-closing.html" class="">vue/html-self-closing</a></td>
+          <td style="text-align: left;">enforce self-closing style</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/max-attributes-per-line.html"
+              class="">vue/max-attributes-per-line</a></td>
+          <td style="text-align: left;">enforce the maximum number of attributes per line</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/multiline-html-element-content-newline.html"
+              class="">vue/multiline-html-element-content-newline</a></td>
+          <td style="text-align: left;">require a line break before and after the contents of a multiline element</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/mustache-interpolation-spacing.html"
+              class="">vue/mustache-interpolation-spacing</a></td>
+          <td style="text-align: left;">enforce unified spacing in mustache interpolations</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-multi-spaces.html" class="">vue/no-multi-spaces</a></td>
+          <td style="text-align: left;">disallow multiple spaces</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-spaces-around-equal-signs-in-attribute.html"
+              class="">vue/no-spaces-around-equal-signs-in-attribute</a></td>
+          <td style="text-align: left;">disallow spaces around equal signs in attribute</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-template-shadow.html" class="">vue/no-template-shadow</a>
+          </td>
+          <td style="text-align: left;">disallow variable declarations from shadowing variables declared in the outer
+            scope</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/one-component-per-file.html"
+              class="">vue/one-component-per-file</a></td>
+          <td style="text-align: left;">enforce that each component should be in its own file</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/prop-name-casing.html" class="">vue/prop-name-casing</a></td>
+          <td style="text-align: left;">enforce specific casing for the Prop name in Vue components</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/require-default-prop.html" class="">vue/require-default-prop</a>
+          </td>
+          <td style="text-align: left;">require default value for props</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/require-explicit-emits.html"
+              class="">vue/require-explicit-emits</a></td>
+          <td style="text-align: left;">require <code>emits</code> option with name triggered by <code>$emit()</code>
+          </td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/require-prop-types.html" class="">vue/require-prop-types</a>
+          </td>
+          <td style="text-align: left;">require type definitions in props</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/singleline-html-element-content-newline.html"
+              class="">vue/singleline-html-element-content-newline</a></td>
+          <td style="text-align: left;">require a line break before and after the contents of a singleline element</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/v-bind-style.html" class="">vue/v-bind-style</a></td>
+          <td style="text-align: left;">enforce <code>v-bind</code> directive style</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/v-on-style.html" class="">vue/v-on-style</a></td>
+          <td style="text-align: left;">enforce <code>v-on</code> directive style</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/v-slot-style.html" class="">vue/v-slot-style</a></td>
+          <td style="text-align: left;">enforce <code>v-slot</code> directive style</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="priority-c-recommended-minimizing-arbitrary-choices-and-cognitive-overhead-for-vue-js-3-x"><a
+        href="#priority-c-recommended-minimizing-arbitrary-choices-and-cognitive-overhead-for-vue-js-3-x"
+        class="header-anchor">#</a> Priority C: Recommended (Minimizing Arbitrary Choices and Cognitive Overhead) <span
+        data-v-15b7b770="" class="badge tip" style="vertical-align: middle;">for Vue.js 3.x</span></h2>
+    <p>Enforce all the rules in this category, as well as all higher priority rules, with:</p>
+    <div class="language-json extra-class">
+      <pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">"extends"</span><span class="token operator">:</span> <span class="token string">"plugin:vue/vue3-recommended"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: left;">Rule ID</th>
+          <th style="text-align: left;">Description</th>
+          <th style="text-align: left;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/attributes-order.html" class="">vue/attributes-order</a></td>
+          <td style="text-align: left;">enforce order of attributes</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/component-tags-order.html" class="">vue/component-tags-order</a>
+          </td>
+          <td style="text-align: left;">enforce order of component top-level elements</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-lone-template.html" class="">vue/no-lone-template</a></td>
+          <td style="text-align: left;">disallow unnecessary <code>&lt;template&gt;</code></td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-multiple-slot-args.html"
+              class="">vue/no-multiple-slot-args</a>
+          </td>
+          <td style="text-align: left;">disallow to pass multiple arguments to scoped slots</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-v-html.html" class="">vue/no-v-html</a></td>
+          <td style="text-align: left;">disallow use of v-html to prevent XSS attack</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/order-in-components.html" class="">vue/order-in-components</a>
+          </td>
+          <td style="text-align: left;">enforce order of properties in components</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/this-in-template.html" class="">vue/this-in-template</a></td>
+          <td style="text-align: left;">disallow usage of <code>this</code> in template</td>
+          <td style="text-align: left;"></td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="priority-a-essential-error-prevention-for-vue-js-2-x"><a
+        href="#priority-a-essential-error-prevention-for-vue-js-2-x" class="header-anchor">#</a> Priority A: Essential
+      (Error Prevention) <span data-v-15b7b770="" class="badge warn" style="vertical-align: middle;">for Vue.js
+        2.x</span>
+    </h2>
+    <p>Enforce all the rules in this category, as well as all higher priority rules, with:</p>
+    <div class="language-json extra-class">
+      <pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">"extends"</span><span class="token operator">:</span> <span class="token string">"plugin:vue/essential"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: left;">Rule ID</th>
+          <th style="text-align: left;">Description</th>
+          <th style="text-align: left;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-arrow-functions-in-watch.html"
+              class="">vue/no-arrow-functions-in-watch</a></td>
+          <td style="text-align: left;">disallow using arrow functions to define watcher</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-async-in-computed-properties.html"
+              class="">vue/no-async-in-computed-properties</a></td>
+          <td style="text-align: left;">disallow asynchronous actions in computed properties</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-custom-modifiers-on-v-model.html"
+              class="">vue/no-custom-modifiers-on-v-model</a></td>
+          <td style="text-align: left;">disallow custom modifiers on v-model used on the component</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-dupe-keys.html" class="">vue/no-dupe-keys</a></td>
+          <td style="text-align: left;">disallow duplication of field names</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-dupe-v-else-if.html" class="">vue/no-dupe-v-else-if</a></td>
+          <td style="text-align: left;">disallow duplicate conditions in <code>v-if</code> / <code>v-else-if</code>
+            chains
+          </td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-duplicate-attributes.html"
+              class="">vue/no-duplicate-attributes</a></td>
+          <td style="text-align: left;">disallow duplication of attributes</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-multiple-template-root.html"
+              class="">vue/no-multiple-template-root</a></td>
+          <td style="text-align: left;">disallow adding multiple root nodes to the template</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-mutating-props.html" class="">vue/no-mutating-props</a></td>
+          <td style="text-align: left;">disallow mutation of component props</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-parsing-error.html" class="">vue/no-parsing-error</a></td>
+          <td style="text-align: left;">disallow parsing errors in <code>&lt;template&gt;</code></td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-reserved-keys.html" class="">vue/no-reserved-keys</a></td>
+          <td style="text-align: left;">disallow overwriting reserved keys</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-shared-component-data.html"
+              class="">vue/no-shared-component-data</a></td>
+          <td style="text-align: left;">enforce component's data property to be a function</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-side-effects-in-computed-properties.html"
+              class="">vue/no-side-effects-in-computed-properties</a></td>
+          <td style="text-align: left;">disallow side effects in computed properties</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-template-key.html" class="">vue/no-template-key</a></td>
+          <td style="text-align: left;">disallow <code>key</code> attribute on <code>&lt;template&gt;</code></td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-textarea-mustache.html" class="">vue/no-textarea-mustache</a>
+          </td>
+          <td style="text-align: left;">disallow mustaches in <code>&lt;textarea&gt;</code></td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-unused-components.html" class="">vue/no-unused-components</a>
+          </td>
+          <td style="text-align: left;">disallow registering components that are not used inside templates</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-unused-vars.html" class="">vue/no-unused-vars</a></td>
+          <td style="text-align: left;">disallow unused variable definitions of v-for directives or scope attributes
+          </td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-use-v-if-with-v-for.html"
+              class="">vue/no-use-v-if-with-v-for</a></td>
+          <td style="text-align: left;">disallow use v-if on the same element as v-for</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-v-for-template-key.html"
+              class="">vue/no-v-for-template-key</a>
+          </td>
+          <td style="text-align: left;">disallow <code>key</code> attribute on <code>&lt;template v-for&gt;</code></td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-v-model-argument.html" class="">vue/no-v-model-argument</a>
+          </td>
+          <td style="text-align: left;">disallow adding an argument to <code>v-model</code> used in custom component
+          </td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/require-component-is.html" class="">vue/require-component-is</a>
+          </td>
+          <td style="text-align: left;">require <code>v-bind:is</code> of <code>&lt;component&gt;</code> elements</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/require-prop-type-constructor.html"
+              class="">vue/require-prop-type-constructor</a></td>
+          <td style="text-align: left;">require prop type to be a constructor</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/require-render-return.html"
+              class="">vue/require-render-return</a>
+          </td>
+          <td style="text-align: left;">enforce render function to always return value</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/require-v-for-key.html" class="">vue/require-v-for-key</a></td>
+          <td style="text-align: left;">require <code>v-bind:key</code> with <code>v-for</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/require-valid-default-prop.html"
+              class="">vue/require-valid-default-prop</a></td>
+          <td style="text-align: left;">enforce props default values to be valid</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/return-in-computed-property.html"
+              class="">vue/return-in-computed-property</a></td>
+          <td style="text-align: left;">enforce that a return statement is present in computed property</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/use-v-on-exact.html" class="">vue/use-v-on-exact</a></td>
+          <td style="text-align: left;">enforce usage of <code>exact</code> modifier on <code>v-on</code></td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-template-root.html" class="">vue/valid-template-root</a>
+          </td>
+          <td style="text-align: left;">enforce valid template root</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-bind-sync.html" class="">vue/valid-v-bind-sync</a></td>
+          <td style="text-align: left;">enforce valid <code>.sync</code> modifier on <code>v-bind</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-bind.html" class="">vue/valid-v-bind</a></td>
+          <td style="text-align: left;">enforce valid <code>v-bind</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-cloak.html" class="">vue/valid-v-cloak</a></td>
+          <td style="text-align: left;">enforce valid <code>v-cloak</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-else-if.html" class="">vue/valid-v-else-if</a></td>
+          <td style="text-align: left;">enforce valid <code>v-else-if</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-else.html" class="">vue/valid-v-else</a></td>
+          <td style="text-align: left;">enforce valid <code>v-else</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-for.html" class="">vue/valid-v-for</a></td>
+          <td style="text-align: left;">enforce valid <code>v-for</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-html.html" class="">vue/valid-v-html</a></td>
+          <td style="text-align: left;">enforce valid <code>v-html</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-if.html" class="">vue/valid-v-if</a></td>
+          <td style="text-align: left;">enforce valid <code>v-if</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-model.html" class="">vue/valid-v-model</a></td>
+          <td style="text-align: left;">enforce valid <code>v-model</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-on.html" class="">vue/valid-v-on</a></td>
+          <td style="text-align: left;">enforce valid <code>v-on</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-once.html" class="">vue/valid-v-once</a></td>
+          <td style="text-align: left;">enforce valid <code>v-once</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-pre.html" class="">vue/valid-v-pre</a></td>
+          <td style="text-align: left;">enforce valid <code>v-pre</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-show.html" class="">vue/valid-v-show</a></td>
+          <td style="text-align: left;">enforce valid <code>v-show</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-slot.html" class="">vue/valid-v-slot</a></td>
+          <td style="text-align: left;">enforce valid <code>v-slot</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-v-text.html" class="">vue/valid-v-text</a></td>
+          <td style="text-align: left;">enforce valid <code>v-text</code> directives</td>
+          <td style="text-align: left;"></td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="priority-b-strongly-recommended-improving-readability-for-vue-js-2-x"><a
+        href="#priority-b-strongly-recommended-improving-readability-for-vue-js-2-x" class="header-anchor">#</a>
+      Priority
+      B: Strongly Recommended (Improving Readability) <span data-v-15b7b770="" class="badge warn"
+        style="vertical-align: middle;">for Vue.js 2.x</span></h2>
+    <p>Enforce all the rules in this category, as well as all higher priority rules, with:</p>
+    <div class="language-json extra-class">
+      <pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">"extends"</span><span class="token operator">:</span> <span class="token string">"plugin:vue/strongly-recommended"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: left;">Rule ID</th>
+          <th style="text-align: left;">Description</th>
+          <th style="text-align: left;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/attribute-hyphenation.html"
+              class="">vue/attribute-hyphenation</a>
+          </td>
+          <td style="text-align: left;">enforce attribute naming style on custom components in template</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/component-definition-name-casing.html"
+              class="">vue/component-definition-name-casing</a></td>
+          <td style="text-align: left;">enforce specific casing for component definition name</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/html-closing-bracket-newline.html"
+              class="">vue/html-closing-bracket-newline</a></td>
+          <td style="text-align: left;">require or disallow a line break before tag's closing brackets</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/html-closing-bracket-spacing.html"
+              class="">vue/html-closing-bracket-spacing</a></td>
+          <td style="text-align: left;">require or disallow a space before tag's closing brackets</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/html-end-tags.html" class="">vue/html-end-tags</a></td>
+          <td style="text-align: left;">enforce end tag style</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/html-indent.html" class="">vue/html-indent</a></td>
+          <td style="text-align: left;">enforce consistent indentation in <code>&lt;template&gt;</code></td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/html-quotes.html" class="">vue/html-quotes</a></td>
+          <td style="text-align: left;">enforce quotes style of HTML attributes</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/html-self-closing.html" class="">vue/html-self-closing</a></td>
+          <td style="text-align: left;">enforce self-closing style</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/max-attributes-per-line.html"
+              class="">vue/max-attributes-per-line</a></td>
+          <td style="text-align: left;">enforce the maximum number of attributes per line</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/multiline-html-element-content-newline.html"
+              class="">vue/multiline-html-element-content-newline</a></td>
+          <td style="text-align: left;">require a line break before and after the contents of a multiline element</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/mustache-interpolation-spacing.html"
+              class="">vue/mustache-interpolation-spacing</a></td>
+          <td style="text-align: left;">enforce unified spacing in mustache interpolations</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-multi-spaces.html" class="">vue/no-multi-spaces</a></td>
+          <td style="text-align: left;">disallow multiple spaces</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-spaces-around-equal-signs-in-attribute.html"
+              class="">vue/no-spaces-around-equal-signs-in-attribute</a></td>
+          <td style="text-align: left;">disallow spaces around equal signs in attribute</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-template-shadow.html" class="">vue/no-template-shadow</a>
+          </td>
+          <td style="text-align: left;">disallow variable declarations from shadowing variables declared in the outer
+            scope</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/one-component-per-file.html"
+              class="">vue/one-component-per-file</a></td>
+          <td style="text-align: left;">enforce that each component should be in its own file</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/prop-name-casing.html" class="">vue/prop-name-casing</a></td>
+          <td style="text-align: left;">enforce specific casing for the Prop name in Vue components</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/require-default-prop.html" class="">vue/require-default-prop</a>
+          </td>
+          <td style="text-align: left;">require default value for props</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/require-prop-types.html" class="">vue/require-prop-types</a>
+          </td>
+          <td style="text-align: left;">require type definitions in props</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/singleline-html-element-content-newline.html"
+              class="">vue/singleline-html-element-content-newline</a></td>
+          <td style="text-align: left;">require a line break before and after the contents of a singleline element</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/v-bind-style.html" class="">vue/v-bind-style</a></td>
+          <td style="text-align: left;">enforce <code>v-bind</code> directive style</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/v-on-style.html" class="">vue/v-on-style</a></td>
+          <td style="text-align: left;">enforce <code>v-on</code> directive style</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/v-slot-style.html" class="">vue/v-slot-style</a></td>
+          <td style="text-align: left;">enforce <code>v-slot</code> directive style</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="priority-c-recommended-minimizing-arbitrary-choices-and-cognitive-overhead-for-vue-js-2-x"><a
+        href="#priority-c-recommended-minimizing-arbitrary-choices-and-cognitive-overhead-for-vue-js-2-x"
+        class="header-anchor">#</a> Priority C: Recommended (Minimizing Arbitrary Choices and Cognitive Overhead) <span
+        data-v-15b7b770="" class="badge warn" style="vertical-align: middle;">for Vue.js 2.x</span></h2>
+    <p>Enforce all the rules in this category, as well as all higher priority rules, with:</p>
+    <div class="language-json extra-class">
+      <pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">"extends"</span><span class="token operator">:</span> <span class="token string">"plugin:vue/recommended"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: left;">Rule ID</th>
+          <th style="text-align: left;">Description</th>
+          <th style="text-align: left;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/attributes-order.html" class="">vue/attributes-order</a></td>
+          <td style="text-align: left;">enforce order of attributes</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/component-tags-order.html" class="">vue/component-tags-order</a>
+          </td>
+          <td style="text-align: left;">enforce order of component top-level elements</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-lone-template.html" class="">vue/no-lone-template</a></td>
+          <td style="text-align: left;">disallow unnecessary <code>&lt;template&gt;</code></td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-multiple-slot-args.html"
+              class="">vue/no-multiple-slot-args</a>
+          </td>
+          <td style="text-align: left;">disallow to pass multiple arguments to scoped slots</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-v-html.html" class="">vue/no-v-html</a></td>
+          <td style="text-align: left;">disallow use of v-html to prevent XSS attack</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/order-in-components.html" class="">vue/order-in-components</a>
+          </td>
+          <td style="text-align: left;">enforce order of properties in components</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/this-in-template.html" class="">vue/this-in-template</a></td>
+          <td style="text-align: left;">disallow usage of <code>this</code> in template</td>
+          <td style="text-align: left;"></td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="uncategorized"><a href="#uncategorized" class="header-anchor">#</a> Uncategorized</h2>
+    <p>No preset enables the rules in this category.
+      Please enable each rule if you want.</p>
+    <p>For example:</p>
+    <div class="language-json extra-class">
+      <pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">"rules"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"vue/block-tag-newline"</span><span class="token operator">:</span> <span class="token string">"error"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: left;">Rule ID</th>
+          <th style="text-align: left;">Description</th>
+          <th style="text-align: left;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/block-tag-newline.html" class="">vue/block-tag-newline</a></td>
+          <td style="text-align: left;">enforce line breaks after opening and before closing block-level tags</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/component-name-in-template-casing.html"
+              class="">vue/component-name-in-template-casing</a></td>
+          <td style="text-align: left;">enforce specific casing for the component naming style in template</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/custom-event-name-casing.html"
+              class="">vue/custom-event-name-casing</a></td>
+          <td style="text-align: left;">enforce specific casing for custom event name</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/html-button-has-type.html" class="">vue/html-button-has-type</a>
+          </td>
+          <td style="text-align: left;">disallow usage of button without an explicit type attribute</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/html-comment-content-newline.html"
+              class="">vue/html-comment-content-newline</a></td>
+          <td style="text-align: left;">enforce unified line brake in HTML comments</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/html-comment-content-spacing.html"
+              class="">vue/html-comment-content-spacing</a></td>
+          <td style="text-align: left;">enforce unified spacing in HTML comments</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/html-comment-indent.html" class="">vue/html-comment-indent</a>
+          </td>
+          <td style="text-align: left;">enforce consistent indentation in HTML comments</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/match-component-file-name.html"
+              class="">vue/match-component-file-name</a></td>
+          <td style="text-align: left;">require component name property to match its file name</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/new-line-between-multi-line-property.html"
+              class="">vue/new-line-between-multi-line-property</a></td>
+          <td style="text-align: left;">enforce new lines between multi-line properties in Vue components</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/next-tick-style.html" class="">vue/next-tick-style</a></td>
+          <td style="text-align: left;">enforce Promise or callback style in <code>nextTick</code></td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-bare-strings-in-template.html"
+              class="">vue/no-bare-strings-in-template</a></td>
+          <td style="text-align: left;">disallow the use of bare strings in <code>&lt;template&gt;</code></td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-boolean-default.html" class="">vue/no-boolean-default</a>
+          </td>
+          <td style="text-align: left;">disallow boolean defaults</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-duplicate-attr-inheritance.html"
+              class="">vue/no-duplicate-attr-inheritance</a></td>
+          <td style="text-align: left;">enforce <code>inheritAttrs</code> to be set to <code>false</code> when using
+            <code>v-bind="$attrs"</code>
+          </td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-empty-component-block.html"
+              class="">vue/no-empty-component-block</a></td>
+          <td style="text-align: left;">disallow the <code>&lt;template&gt;</code> <code>&lt;script&gt;</code>
+            <code>&lt;style&gt;</code> block to be empty
+          </td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-multiple-objects-in-class.html"
+              class="">vue/no-multiple-objects-in-class</a></td>
+          <td style="text-align: left;">disallow to pass multiple objects into array to class</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-potential-component-option-typo.html"
+              class="">vue/no-potential-component-option-typo</a></td>
+          <td style="text-align: left;">disallow a potential typo in your component property</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-reserved-component-names.html"
+              class="">vue/no-reserved-component-names</a></td>
+          <td style="text-align: left;">disallow the use of reserved names in component definitions</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-restricted-block.html" class="">vue/no-restricted-block</a>
+          </td>
+          <td style="text-align: left;">disallow specific block</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-restricted-call-after-await.html"
+              class="">vue/no-restricted-call-after-await</a></td>
+          <td style="text-align: left;">disallow asynchronously called restricted methods</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-restricted-component-options.html"
+              class="">vue/no-restricted-component-options</a></td>
+          <td style="text-align: left;">disallow specific component option</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-restricted-custom-event.html"
+              class="">vue/no-restricted-custom-event</a></td>
+          <td style="text-align: left;">disallow specific custom event</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-restricted-props.html" class="">vue/no-restricted-props</a>
+          </td>
+          <td style="text-align: left;">disallow specific props</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-restricted-static-attribute.html"
+              class="">vue/no-restricted-static-attribute</a></td>
+          <td style="text-align: left;">disallow specific attribute</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-restricted-v-bind.html" class="">vue/no-restricted-v-bind</a>
+          </td>
+          <td style="text-align: left;">disallow specific argument in <code>v-bind</code></td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-static-inline-styles.html"
+              class="">vue/no-static-inline-styles</a></td>
+          <td style="text-align: left;">disallow static inline <code>style</code> attributes</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-template-target-blank.html"
+              class="">vue/no-template-target-blank</a></td>
+          <td style="text-align: left;">disallow target="_blank" attribute without rel="noopener noreferrer"</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-unregistered-components.html"
+              class="">vue/no-unregistered-components</a></td>
+          <td style="text-align: left;">disallow using components that are not registered inside templates</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-unsupported-features.html"
+              class="">vue/no-unsupported-features</a></td>
+          <td style="text-align: left;">disallow unsupported Vue.js syntax on the specified version</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-unused-properties.html" class="">vue/no-unused-properties</a>
+          </td>
+          <td style="text-align: left;">disallow unused properties</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-useless-mustaches.html" class="">vue/no-useless-mustaches</a>
+          </td>
+          <td style="text-align: left;">disallow unnecessary mustache interpolations</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-useless-v-bind.html" class="">vue/no-useless-v-bind</a></td>
+          <td style="text-align: left;">disallow unnecessary <code>v-bind</code> directives</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/padding-line-between-blocks.html"
+              class="">vue/padding-line-between-blocks</a></td>
+          <td style="text-align: left;">require or disallow padding lines between blocks</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/require-direct-export.html"
+              class="">vue/require-direct-export</a>
+          </td>
+          <td style="text-align: left;">require the component to be directly exported</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/require-name-property.html"
+              class="">vue/require-name-property</a>
+          </td>
+          <td style="text-align: left;">require a name property in Vue components</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/script-indent.html" class="">vue/script-indent</a></td>
+          <td style="text-align: left;">enforce consistent indentation in <code>&lt;script&gt;</code></td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/sort-keys.html" class="">vue/sort-keys</a></td>
+          <td style="text-align: left;">enforce sort-keys in a manner that is compatible with order-in-components</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/static-class-names-order.html"
+              class="">vue/static-class-names-order</a></td>
+          <td style="text-align: left;">enforce static class names order</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/v-for-delimiter-style.html"
+              class="">vue/v-for-delimiter-style</a>
+          </td>
+          <td style="text-align: left;">enforce <code>v-for</code> directive's delimiter style</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/v-on-event-hyphenation.html"
+              class="">vue/v-on-event-hyphenation</a></td>
+          <td style="text-align: left;">enforce v-on event naming style on custom components in template</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/v-on-function-call.html" class="">vue/v-on-function-call</a>
+          </td>
+          <td style="text-align: left;">enforce or forbid parentheses after method calls without arguments in
+            <code>v-on</code> directives
+          </td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/valid-next-tick.html" class="">vue/valid-next-tick</a></td>
+          <td style="text-align: left;">enforce valid <code>nextTick</code> function calls</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="extension-rules"><a href="#extension-rules" class="header-anchor">#</a> Extension Rules</h3>
+    <p>The following rules extend the rules provided by ESLint itself and apply them to the expressions in the
+      <code>&lt;template&gt;</code>.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: left;">Rule ID</th>
+          <th style="text-align: left;">Description</th>
+          <th style="text-align: left;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/array-bracket-newline.html"
+              class="">vue/array-bracket-newline</a>
+          </td>
+          <td style="text-align: left;">enforce linebreaks after opening and before closing array brackets</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/array-bracket-spacing.html"
+              class="">vue/array-bracket-spacing</a>
+          </td>
+          <td style="text-align: left;">enforce consistent spacing inside array brackets</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/arrow-spacing.html" class="">vue/arrow-spacing</a></td>
+          <td style="text-align: left;">enforce consistent spacing before and after the arrow in arrow functions</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/block-spacing.html" class="">vue/block-spacing</a></td>
+          <td style="text-align: left;">disallow or enforce spaces inside of blocks after opening block and before
+            closing
+            block</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/brace-style.html" class="">vue/brace-style</a></td>
+          <td style="text-align: left;">enforce consistent brace style for blocks</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/camelcase.html" class="">vue/camelcase</a></td>
+          <td style="text-align: left;">enforce camelcase naming convention</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/comma-dangle.html" class="">vue/comma-dangle</a></td>
+          <td style="text-align: left;">require or disallow trailing commas</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/comma-spacing.html" class="">vue/comma-spacing</a></td>
+          <td style="text-align: left;">enforce consistent spacing before and after commas</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/comma-style.html" class="">vue/comma-style</a></td>
+          <td style="text-align: left;">enforce consistent comma style</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/dot-location.html" class="">vue/dot-location</a></td>
+          <td style="text-align: left;">enforce consistent newlines before and after dots</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/dot-notation.html" class="">vue/dot-notation</a></td>
+          <td style="text-align: left;">enforce dot notation whenever possible</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/eqeqeq.html" class="">vue/eqeqeq</a></td>
+          <td style="text-align: left;">require the use of <code>===</code> and <code>!==</code></td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/func-call-spacing.html" class="">vue/func-call-spacing</a></td>
+          <td style="text-align: left;">require or disallow spacing between function identifiers and their invocations
+          </td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/key-spacing.html" class="">vue/key-spacing</a></td>
+          <td style="text-align: left;">enforce consistent spacing between keys and values in object literal properties
+          </td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/keyword-spacing.html" class="">vue/keyword-spacing</a></td>
+          <td style="text-align: left;">enforce consistent spacing before and after keywords</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/max-len.html" class="">vue/max-len</a></td>
+          <td style="text-align: left;">enforce a maximum line length</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-constant-condition.html"
+              class="">vue/no-constant-condition</a>
+          </td>
+          <td style="text-align: left;">disallow constant expressions in conditions</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-empty-pattern.html" class="">vue/no-empty-pattern</a></td>
+          <td style="text-align: left;">disallow empty destructuring patterns</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-extra-parens.html" class="">vue/no-extra-parens</a></td>
+          <td style="text-align: left;">disallow unnecessary parentheses</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-irregular-whitespace.html"
+              class="">vue/no-irregular-whitespace</a></td>
+          <td style="text-align: left;">disallow irregular whitespace</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-restricted-syntax.html" class="">vue/no-restricted-syntax</a>
+          </td>
+          <td style="text-align: left;">disallow specified syntax</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-sparse-arrays.html" class="">vue/no-sparse-arrays</a></td>
+          <td style="text-align: left;">disallow sparse arrays</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-useless-concat.html" class="">vue/no-useless-concat</a></td>
+          <td style="text-align: left;">disallow unnecessary concatenation of literals or template literals</td>
+          <td style="text-align: left;"></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/object-curly-newline.html" class="">vue/object-curly-newline</a>
+          </td>
+          <td style="text-align: left;">enforce consistent line breaks inside braces</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/object-curly-spacing.html" class="">vue/object-curly-spacing</a>
+          </td>
+          <td style="text-align: left;">enforce consistent spacing inside braces</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/object-property-newline.html"
+              class="">vue/object-property-newline</a></td>
+          <td style="text-align: left;">enforce placing object properties on separate lines</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/operator-linebreak.html" class="">vue/operator-linebreak</a>
+          </td>
+          <td style="text-align: left;">enforce consistent linebreak style for operators</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/prefer-template.html" class="">vue/prefer-template</a></td>
+          <td style="text-align: left;">require template literals instead of string concatenation</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/space-in-parens.html" class="">vue/space-in-parens</a></td>
+          <td style="text-align: left;">enforce consistent spacing inside parentheses</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/space-infix-ops.html" class="">vue/space-infix-ops</a></td>
+          <td style="text-align: left;">require spacing around infix operators</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/space-unary-ops.html" class="">vue/space-unary-ops</a></td>
+          <td style="text-align: left;">enforce consistent spacing before or after unary operators</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/template-curly-spacing.html"
+              class="">vue/template-curly-spacing</a></td>
+          <td style="text-align: left;">require or disallow spacing around embedded expressions of template strings</td>
+          <td style="text-align: left;">🔧</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="deprecated"><a href="#deprecated" class="header-anchor">#</a> Deprecated</h2>
+    <ul>
+      <li>⚠️ We're going to remove deprecated rules in the next major release. Please migrate to successor/new rules.
+      </li>
+      <li>😇 We don't fix bugs which are in deprecated rules since we don't have enough resources.</li>
+    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: left;">Rule ID</th>
+          <th style="text-align: left;">Replaced by</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/name-property-casing.html" class="">vue/name-property-casing</a>
+          </td>
+          <td style="text-align: left;"><a href="/rules/component-definition-name-casing.html"
+              class="">vue/component-definition-name-casing</a></td>
+        </tr>
+        <tr>
+          <td style="text-align: left;"><a href="/rules/no-confusing-v-for-v-if.html"
+              class="">vue/no-confusing-v-for-v-if</a></td>
+          <td style="text-align: left;"><a href="/rules/no-use-v-if-with-v-for.html"
+              class="">vue/no-use-v-if-with-v-for</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

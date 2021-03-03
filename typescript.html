@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/ban-ts-comment.md"><code>@typescript-eslint/ban-ts-comment</code></a>
+        </td>
+        <td>Bans <code>@ts-&lt;directive&gt;</code> comments from being used or requires descriptions after directive
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td></td> -->
+  <script>
+    window.onload = function () {
+      let obg = {};
+      document.querySelectorAll("table tbody tr").forEach(dom => {
+
+        const innerHTML0 = dom.children[0].innerHTML;
+        const innerHTML1 = dom.children[1].innerHTML;
+        const innerHTML2 = dom.children[2].innerHTML;
+        const innerHTML3 = dom.children[3].innerHTML;
+        const innerHTML4 = dom.children[4].innerHTML;
+
+        const aa = innerHTML0.match(/href="(.+)"/)[1]; // href
+        const bb = innerHTML0.match(/<code>(.+)<\/code>/)[1]; // key
+        const cc = innerHTML1;
+        const dd = innerHTML2 && "recommended";
+        const ee = innerHTML3 && "fixable";
+        obg[`${bb}`] = {};
+        obg[`${bb}`]["href"] = aa;
+        obg[`${bb}`]["desc"] = cc;
+        obg[`${bb}`]["recommended"] = dd;
+        dd && (obg[`${bb}`]["isRecommended"] = dd);
+        obg[`${bb}`]["fixable"] = ee;
+      });
+
+      document.write(JSON.stringify(obg));
+    }
+  </script>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </th>
+        <th>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </th>
+        <th>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/adjacent-overload-signatures.md"><code>@typescript-eslint/adjacent-overload-signatures</code></a>
+        </td>
+        <td>Require that member overloads be consecutive</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/array-type.md"><code>@typescript-eslint/array-type</code></a>
+        </td>
+        <td>Requires using either <code>T[]</code> or <code>Array&lt;T&gt;</code> for arrays</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/await-thenable.md"><code>@typescript-eslint/await-thenable</code></a>
+        </td>
+        <td>Disallows awaiting a value that is not a Thenable</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/ban-ts-comment.md"><code>@typescript-eslint/ban-ts-comment</code></a>
+        </td>
+        <td>Bans <code>@ts-&lt;directive&gt;</code> comments from being used or requires descriptions after directive
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/ban-tslint-comment.md"><code>@typescript-eslint/ban-tslint-comment</code></a>
+        </td>
+        <td>Bans <code>// tslint:&lt;rule-flag&gt;</code> comments from being used</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/ban-types.md"><code>@typescript-eslint/ban-types</code></a>
+        </td>
+        <td>Bans specific types from being used</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/class-literal-property-style.md"><code>@typescript-eslint/class-literal-property-style</code></a>
+        </td>
+        <td>Ensures that literals on classes are exposed in a consistent style</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/consistent-indexed-object-style.md"><code>@typescript-eslint/consistent-indexed-object-style</code></a>
+        </td>
+        <td>Enforce or disallow the use of the record type</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/consistent-type-assertions.md"><code>@typescript-eslint/consistent-type-assertions</code></a>
+        </td>
+        <td>Enforces consistent usage of type assertions</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/consistent-type-definitions.md"><code>@typescript-eslint/consistent-type-definitions</code></a>
+        </td>
+        <td>Consistent with type definition either <code>interface</code> or <code>type</code>
+        </td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/consistent-type-imports.md"><code>@typescript-eslint/consistent-type-imports</code></a>
+        </td>
+        <td>Enforces consistent usage of type imports</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/explicit-function-return-type.md"><code>@typescript-eslint/explicit-function-return-type</code></a>
+        </td>
+        <td>Require explicit return types on functions and class methods</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/explicit-member-accessibility.md"><code>@typescript-eslint/explicit-member-accessibility</code></a>
+        </td>
+        <td>Require explicit accessibility modifiers on class properties and methods</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/explicit-module-boundary-types.md"><code>@typescript-eslint/explicit-module-boundary-types</code></a>
+        </td>
+        <td>Require explicit return and argument types on exported functions' and classes' public class methods</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/member-delimiter-style.md"><code>@typescript-eslint/member-delimiter-style</code></a>
+        </td>
+        <td>Require a specific member delimiter style for interfaces and type literals</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/member-ordering.md"><code>@typescript-eslint/member-ordering</code></a>
+        </td>
+        <td>Require a consistent member declaration order</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/method-signature-style.md"><code>@typescript-eslint/method-signature-style</code></a>
+        </td>
+        <td>Enforces using a particular method signature syntax.</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/naming-convention.md"><code>@typescript-eslint/naming-convention</code></a>
+        </td>
+        <td>Enforces naming conventions for everything across a codebase</td>
+        <td></td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-base-to-string.md"><code>@typescript-eslint/no-base-to-string</code></a>
+        </td>
+        <td>Requires that <code>.toString()</code> is only called on objects which provide useful information when
+          stringified</td>
+        <td></td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-confusing-non-null-assertion.md"><code>@typescript-eslint/no-confusing-non-null-assertion</code></a>
+        </td>
+        <td>Disallow non-null assertion in locations that may be confusing</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-confusing-void-expression.md"><code>@typescript-eslint/no-confusing-void-expression</code></a>
+        </td>
+        <td>Requires expressions of type void to appear in statement position</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-dynamic-delete.md"><code>@typescript-eslint/no-dynamic-delete</code></a>
+        </td>
+        <td>Disallow the delete operator with computed key expressions</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-empty-interface.md"><code>@typescript-eslint/no-empty-interface</code></a>
+        </td>
+        <td>Disallow the declaration of empty interfaces</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-explicit-any.md"><code>@typescript-eslint/no-explicit-any</code></a>
+        </td>
+        <td>Disallow usage of the <code>any</code> type</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-extra-non-null-assertion.md"><code>@typescript-eslint/no-extra-non-null-assertion</code></a>
+        </td>
+        <td>Disallow extra non-null assertion</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-extraneous-class.md"><code>@typescript-eslint/no-extraneous-class</code></a>
+        </td>
+        <td>Forbids the use of classes as namespaces</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-floating-promises.md"><code>@typescript-eslint/no-floating-promises</code></a>
+        </td>
+        <td>Requires Promise-like values to be handled appropriately</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-for-in-array.md"><code>@typescript-eslint/no-for-in-array</code></a>
+        </td>
+        <td>Disallow iterating over an array with a for-in loop</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-implicit-any-catch.md"><code>@typescript-eslint/no-implicit-any-catch</code></a>
+        </td>
+        <td>Disallow usage of the implicit <code>any</code> type in catch clauses</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-inferrable-types.md"><code>@typescript-eslint/no-inferrable-types</code></a>
+        </td>
+        <td>Disallows explicit type declarations for variables or parameters initialized to a number, string, or boolean
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-invalid-void-type.md"><code>@typescript-eslint/no-invalid-void-type</code></a>
+        </td>
+        <td>Disallows usage of <code>void</code> type outside of generic or return types</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-misused-new.md"><code>@typescript-eslint/no-misused-new</code></a>
+        </td>
+        <td>Enforce valid definition of <code>new</code> and <code>constructor</code>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-misused-promises.md"><code>@typescript-eslint/no-misused-promises</code></a>
+        </td>
+        <td>Avoid using promises in places not designed to handle them</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-namespace.md"><code>@typescript-eslint/no-namespace</code></a>
+        </td>
+        <td>Disallow the use of custom TypeScript modules and namespaces</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-non-null-asserted-optional-chain.md"><code>@typescript-eslint/no-non-null-asserted-optional-chain</code></a>
+        </td>
+        <td>Disallows using a non-null assertion after an optional chain expression</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-non-null-assertion.md"><code>@typescript-eslint/no-non-null-assertion</code></a>
+        </td>
+        <td>Disallows non-null assertions using the <code>!</code> postfix operator</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-parameter-properties.md"><code>@typescript-eslint/no-parameter-properties</code></a>
+        </td>
+        <td>Disallow the use of parameter properties in class constructors</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-require-imports.md"><code>@typescript-eslint/no-require-imports</code></a>
+        </td>
+        <td>Disallows invocation of <code>require()</code>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-this-alias.md"><code>@typescript-eslint/no-this-alias</code></a>
+        </td>
+        <td>Disallow aliasing <code>this</code>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-type-alias.md"><code>@typescript-eslint/no-type-alias</code></a>
+        </td>
+        <td>Disallow the use of type aliases</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-unnecessary-boolean-literal-compare.md"><code>@typescript-eslint/no-unnecessary-boolean-literal-compare</code></a>
+        </td>
+        <td>Flags unnecessary equality comparisons against boolean literals</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-unnecessary-condition.md"><code>@typescript-eslint/no-unnecessary-condition</code></a>
+        </td>
+        <td>Prevents conditionals where the type is always truthy or always falsy</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-unnecessary-qualifier.md"><code>@typescript-eslint/no-unnecessary-qualifier</code></a>
+        </td>
+        <td>Warns when a namespace qualifier is unnecessary</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-unnecessary-type-arguments.md"><code>@typescript-eslint/no-unnecessary-type-arguments</code></a>
+        </td>
+        <td>Enforces that type arguments will not be used if not required</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-unnecessary-type-assertion.md"><code>@typescript-eslint/no-unnecessary-type-assertion</code></a>
+        </td>
+        <td>Warns if a type assertion does not change the type of an expression</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-unnecessary-type-constraint.md"><code>@typescript-eslint/no-unnecessary-type-constraint</code></a>
+        </td>
+        <td>Disallows unnecessary constraints on generic types</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-unsafe-assignment.md"><code>@typescript-eslint/no-unsafe-assignment</code></a>
+        </td>
+        <td>Disallows assigning any to variables and properties</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-unsafe-call.md"><code>@typescript-eslint/no-unsafe-call</code></a>
+        </td>
+        <td>Disallows calling an any type value</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-unsafe-member-access.md"><code>@typescript-eslint/no-unsafe-member-access</code></a>
+        </td>
+        <td>Disallows member access on any typed variables</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-unsafe-return.md"><code>@typescript-eslint/no-unsafe-return</code></a>
+        </td>
+        <td>Disallows returning any from a function</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-var-requires.md"><code>@typescript-eslint/no-var-requires</code></a>
+        </td>
+        <td>Disallows the use of require statements except in import statements</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/non-nullable-type-assertion-style.md"><code>@typescript-eslint/non-nullable-type-assertion-style</code></a>
+        </td>
+        <td>Prefers a non-null assertion over explicit type cast when possible</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/prefer-as-const.md"><code>@typescript-eslint/prefer-as-const</code></a>
+        </td>
+        <td>Prefer usage of <code>as const</code> over literal type</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/prefer-enum-initializers.md"><code>@typescript-eslint/prefer-enum-initializers</code></a>
+        </td>
+        <td>Prefer initializing each enums member value</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/prefer-for-of.md"><code>@typescript-eslint/prefer-for-of</code></a>
+        </td>
+        <td>Prefer a ‘for-of’ loop over a standard ‘for’ loop if the index is only used to access the array being
+          iterated
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/prefer-function-type.md"><code>@typescript-eslint/prefer-function-type</code></a>
+        </td>
+        <td>Use function types instead of interfaces with call signatures</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/prefer-includes.md"><code>@typescript-eslint/prefer-includes</code></a>
+        </td>
+        <td>Enforce <code>includes</code> method over <code>indexOf</code> method</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/prefer-literal-enum-member.md"><code>@typescript-eslint/prefer-literal-enum-member</code></a>
+        </td>
+        <td>Require that all enum members be literal values to prevent unintended enum member name shadow issues</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/prefer-namespace-keyword.md"><code>@typescript-eslint/prefer-namespace-keyword</code></a>
+        </td>
+        <td>Require the use of the <code>namespace</code> keyword instead of the <code>module</code> keyword to declare
+          custom TypeScript modules</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/prefer-nullish-coalescing.md"><code>@typescript-eslint/prefer-nullish-coalescing</code></a>
+        </td>
+        <td>Enforce the usage of the nullish coalescing operator instead of logical chaining</td>
+        <td></td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/prefer-optional-chain.md"><code>@typescript-eslint/prefer-optional-chain</code></a>
+        </td>
+        <td>Prefer using concise optional chain expressions instead of chained logical ands</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/prefer-readonly.md"><code>@typescript-eslint/prefer-readonly</code></a>
+        </td>
+        <td>Requires that private members are marked as <code>readonly</code> if they're never modified outside of the
+          constructor</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/prefer-readonly-parameter-types.md"><code>@typescript-eslint/prefer-readonly-parameter-types</code></a>
+        </td>
+        <td>Requires that function parameters are typed as readonly to prevent accidental mutation of inputs</td>
+        <td></td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/prefer-reduce-type-parameter.md"><code>@typescript-eslint/prefer-reduce-type-parameter</code></a>
+        </td>
+        <td>Prefer using type parameter when calling <code>Array#reduce</code> instead of casting</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/prefer-regexp-exec.md"><code>@typescript-eslint/prefer-regexp-exec</code></a>
+        </td>
+        <td>Enforce that <code>RegExp#exec</code> is used instead of <code>String#match</code> if no global flag is
+          provided</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/prefer-string-starts-ends-with.md"><code>@typescript-eslint/prefer-string-starts-ends-with</code></a>
+        </td>
+        <td>Enforce the use of <code>String#startsWith</code> and <code>String#endsWith</code> instead of other
+          equivalent
+          methods of checking substrings</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/prefer-ts-expect-error.md"><code>@typescript-eslint/prefer-ts-expect-error</code></a>
+        </td>
+        <td>Recommends using <code>@ts-expect-error</code> over <code>@ts-ignore</code>
+        </td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/promise-function-async.md"><code>@typescript-eslint/promise-function-async</code></a>
+        </td>
+        <td>Requires any function or method that returns a Promise to be marked async</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/require-array-sort-compare.md"><code>@typescript-eslint/require-array-sort-compare</code></a>
+        </td>
+        <td>Requires <code>Array#sort</code> calls to always provide a <code>compareFunction</code>
+        </td>
+        <td></td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/restrict-plus-operands.md"><code>@typescript-eslint/restrict-plus-operands</code></a>
+        </td>
+        <td>When adding two variables, operands must both be of type number or of type string</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/restrict-template-expressions.md"><code>@typescript-eslint/restrict-template-expressions</code></a>
+        </td>
+        <td>Enforce template literal expressions to be of string type</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/sort-type-union-intersection-members.md"><code>@typescript-eslint/sort-type-union-intersection-members</code></a>
+        </td>
+        <td>Enforces that members of a type union/intersection are sorted alphabetically</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/strict-boolean-expressions.md"><code>@typescript-eslint/strict-boolean-expressions</code></a>
+        </td>
+        <td>Restricts the types allowed in boolean expressions</td>
+        <td></td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/switch-exhaustiveness-check.md"><code>@typescript-eslint/switch-exhaustiveness-check</code></a>
+        </td>
+        <td>Exhaustiveness checking in switch with union type</td>
+        <td></td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/triple-slash-reference.md"><code>@typescript-eslint/triple-slash-reference</code></a>
+        </td>
+        <td>Sets preference level for triple slash directives versus ES6-style import declarations</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/type-annotation-spacing.md"><code>@typescript-eslint/type-annotation-spacing</code></a>
+        </td>
+        <td>Require consistent spacing around type annotations</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/typedef.md"><code>@typescript-eslint/typedef</code></a>
+        </td>
+        <td>Requires type annotations to exist</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/unbound-method.md"><code>@typescript-eslint/unbound-method</code></a>
+        </td>
+        <td>Enforces unbound methods are called with their expected scope</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/unified-signatures.md"><code>@typescript-eslint/unified-signatures</code></a>
+        </td>
+        <td>Warns for any two overloads that could be unified into one by using a union or an optional/rest parameter
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </th>
+        <th>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </th>
+        <th>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/brace-style.md"><code>@typescript-eslint/brace-style</code></a>
+        </td>
+        <td>Enforce consistent brace style for blocks</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/comma-dangle.md"><code>@typescript-eslint/comma-dangle</code></a>
+        </td>
+        <td>Require or disallow trailing comma</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/comma-spacing.md"><code>@typescript-eslint/comma-spacing</code></a>
+        </td>
+        <td>Enforces consistent spacing before and after commas</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/default-param-last.md"><code>@typescript-eslint/default-param-last</code></a>
+        </td>
+        <td>Enforce default parameters to be last</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/dot-notation.md"><code>@typescript-eslint/dot-notation</code></a>
+        </td>
+        <td>enforce dot notation whenever possible</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/func-call-spacing.md"><code>@typescript-eslint/func-call-spacing</code></a>
+        </td>
+        <td>Require or disallow spacing between function identifiers and their invocations</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/indent.md"><code>@typescript-eslint/indent</code></a>
+        </td>
+        <td>Enforce consistent indentation</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/init-declarations.md"><code>@typescript-eslint/init-declarations</code></a>
+        </td>
+        <td>require or disallow initialization in variable declarations</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/keyword-spacing.md"><code>@typescript-eslint/keyword-spacing</code></a>
+        </td>
+        <td>Enforce consistent spacing before and after keywords</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/lines-between-class-members.md"><code>@typescript-eslint/lines-between-class-members</code></a>
+        </td>
+        <td>Require or disallow an empty line between class members</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-array-constructor.md"><code>@typescript-eslint/no-array-constructor</code></a>
+        </td>
+        <td>Disallow generic <code>Array</code> constructors</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-dupe-class-members.md"><code>@typescript-eslint/no-dupe-class-members</code></a>
+        </td>
+        <td>Disallow duplicate class members</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-duplicate-imports.md"><code>@typescript-eslint/no-duplicate-imports</code></a>
+        </td>
+        <td>Disallow duplicate imports</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-empty-function.md"><code>@typescript-eslint/no-empty-function</code></a>
+        </td>
+        <td>Disallow empty functions</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-extra-parens.md"><code>@typescript-eslint/no-extra-parens</code></a>
+        </td>
+        <td>Disallow unnecessary parentheses</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-extra-semi.md"><code>@typescript-eslint/no-extra-semi</code></a>
+        </td>
+        <td>Disallow unnecessary semicolons</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-implied-eval.md"><code>@typescript-eslint/no-implied-eval</code></a>
+        </td>
+        <td>Disallow the use of <code>eval()</code>-like methods</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-invalid-this.md"><code>@typescript-eslint/no-invalid-this</code></a>
+        </td>
+        <td>Disallow <code>this</code> keywords outside of classes or class-like objects</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-loop-func.md"><code>@typescript-eslint/no-loop-func</code></a>
+        </td>
+        <td>Disallow function declarations that contain unsafe references inside loop statements</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-loss-of-precision.md"><code>@typescript-eslint/no-loss-of-precision</code></a>
+        </td>
+        <td>Disallow literal numbers that lose precision</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-magic-numbers.md"><code>@typescript-eslint/no-magic-numbers</code></a>
+        </td>
+        <td>Disallow magic numbers</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-redeclare.md"><code>@typescript-eslint/no-redeclare</code></a>
+        </td>
+        <td>Disallow variable redeclaration</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-shadow.md"><code>@typescript-eslint/no-shadow</code></a>
+        </td>
+        <td>Disallow variable declarations from shadowing variables declared in the outer scope</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-throw-literal.md"><code>@typescript-eslint/no-throw-literal</code></a>
+        </td>
+        <td>Disallow throwing literals as exceptions</td>
+        <td></td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-unused-expressions.md"><code>@typescript-eslint/no-unused-expressions</code></a>
+        </td>
+        <td>Disallow unused expressions</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-unused-vars.md"><code>@typescript-eslint/no-unused-vars</code></a>
+        </td>
+        <td>Disallow unused variables</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-use-before-define.md"><code>@typescript-eslint/no-use-before-define</code></a>
+        </td>
+        <td>Disallow the use of variables before they are defined</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/no-useless-constructor.md"><code>@typescript-eslint/no-useless-constructor</code></a>
+        </td>
+        <td>Disallow unnecessary constructors</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/object-curly-spacing.md"><code>@typescript-eslint/object-curly-spacing</code></a>
+        </td>
+        <td>Enforce consistent spacing inside braces</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/quotes.md"><code>@typescript-eslint/quotes</code></a>
+        </td>
+        <td>Enforce the consistent use of either backticks, double, or single quotes</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/require-await.md"><code>@typescript-eslint/require-await</code></a>
+        </td>
+        <td>Disallow async functions which have no <code>await</code> expression</td>
+        <td>
+          <g-emoji class="g-emoji" alias="heavy_check_mark"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png">✔️</g-emoji>
+        </td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/return-await.md"><code>@typescript-eslint/return-await</code></a>
+        </td>
+        <td>Enforces consistent returning of awaited values</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td>
+          <g-emoji class="g-emoji" alias="thought_balloon"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4ad.png">💭</g-emoji>
+        </td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/semi.md"><code>@typescript-eslint/semi</code></a>
+        </td>
+        <td>Require or disallow semicolons instead of ASI</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/space-before-function-paren.md"><code>@typescript-eslint/space-before-function-paren</code></a>
+        </td>
+        <td>Enforces consistent spacing before function parenthesis</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a
+            href="https://github.com/typescript-eslint/typescript-eslint/blob/HEAD/packages/eslint-plugin/docs/rules/space-infix-ops.md"><code>@typescript-eslint/space-infix-ops</code></a>
+        </td>
+        <td>This rule is aimed at ensuring there are spaces around infix operators.</td>
+        <td></td>
+        <td>
+          <g-emoji class="g-emoji" alias="wrench"
+            fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f527.png">🔧</g-emoji>
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
