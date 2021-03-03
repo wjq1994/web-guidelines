@@ -1,1 +1,1 @@
-啥也没有，气人不
+eslint、prettier规则汇总
